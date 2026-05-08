@@ -1,82 +1,215 @@
-# Jetson_nano_devkit
+# [강습회] Isaac Sim + MCP (Omni-MCP) 튜토리얼
 
-* 링크
-   * https://docs.nvidia.com/
-   * https://docs.nvidia.com/omniverse/index.html
-   * https://docs.isaacsim.omniverse.nvidia.com/4.5.0/ros2_tutorials/tutorial_ros2_navigation.html
+**튜토리얼 환경:**
 
-* Jetson AI 인증
-   * Jetson 개발자 키트 및 NVIDIA의 무료 온라인 교육을 통해 직접 AI를 학습해보세요. 이러한 과정을 완료하면 Jetson 및 AI 개발 역량을 입증하는 인증서를 받으시게 됩니다.
-   * https://www.nvidia.com/en-us/training/
+- Ubuntu 22.04
+- Isaac Sim 4.5
+- VS Code
+- Github Copilot (가입 필요)
+- MCP Server/Client
 
-* https://developer.nvidia.com/embedded/community/support-resources
+# 튜토리얼
 
-* Jetson Nano
-   * Jetson Nano System-on-Module Data Sheet : https://developer.nvidia.com/embedded/dlc/jetson-nano-system-module-datasheet
-   * Jetson Developer Kit user guides : https://developer.nvidia.com/embedded/learn/jetson-nano-2gb-devkit-user-guide
-   * Jetson Linux Developer Guide  : https://docs.nvidia.com/jetson/archives/r34.1/DeveloperGuide/index.html
-   * Pin and function names guides : https://developer.nvidia.com/embedded/learn/jetson-nano-2gb-devkit-user-guide
-   * Jetson Nano Developer Kit Carrier Board Specification : https://developer.nvidia.com/jetson-nano-developer-kit-carrier-board-p3449-b01-specification
-   * Jetson PCN Center
+1. **uv 설치 (Ubuntu 22.04)**
+    
+    ```bash
+    # On Linux
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+    ```
+    
 
-* Get Started with NVIDIA Jetson
-   * https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit
+1. **venv 기반 MCP 서버를 위한 uv 환경 초기화**
+    
+    ```bash
+    # Create @ specific folder
+    uv init omni-mcp
+    cd ~/omni-mcp
+    
+    # Create venv @ omni-mcp folder
+    uv venv
+    source .venv/bin/activate
+    ```
+    
+2. **MCP CLI 설치**
+    
+    ```bash
+    # https://pypi.org/project/mcp/
+    uv pip install "mcp[cli]==1.12.2"
+    ```
+    
+3. **Omni-MCP Git Clone**
+    
+    ```bash
+    git clone https://github.com/omni-mcp/isaac-sim-mcp
+    ```
+    
+4. **Isaac Sim 실행 (Omni-MCP Extension 활성화)**
+    
+    ```bash
+    # New Terminal
+    ~/isaacsim/isaac-sim.sh --ext-folder ~/omni-mcp/isaac-sim-mcp/ --enable isaac.sim.mcp_extension
+    ```
+    
+5. **VS Code | File > Open Folder | omni-mcp**
+6. **VS Code | .vscode 폴더 밑에 `mcp.json` 파일 세팅**
+    - 단축키: `Ctrl+Shift+P`  | MCP: Add Server
+    
+    ```json
+    {
+        "servers": {
+            "mcp-server-omni-isaacsim": {
+                "type": "stdio",
+                "command": "uv",
+                "args": [
+                    "run",
+                    "--directory",
+                    "~/omni-mcp",
+                    "~/omni-mcp/isaac-sim-mcp/isaac_mcp/server.py"
+                ]
+            }
+        }
+    }
+    ```
+    
+    ```bash
+    # Check uv MCP server
+    uv run --directory ~/omni-mcp ~/omni-mcp/isaac-sim-mcp/isaac_mcp/server.py
+    ```
+    
+    ![image.png](attachment:c20880e9-5119-4ff3-b0bc-63e54807a42a:image.png)
+    
+7. **VS Code + Copilot (Agent 모드 설정)**
+    - Copilot 로그인 필요
+8. **Agent를 위한 Instructions.md 설정**
+    - Add Context | Instructions | Config Instruction
+    
+    ```bash
+    ---
+    applyTo: '**'
+    ---
+    # Isaac Sim MCP Rules
+    
+    ## General Rules
+    - Before executing any code, always check if the scene is properly initialized by calling get_scene_info()
+    - When working with robots, try using create_robot() first before using execute_script()
+    - If execute_script() fails due to communication error, retry up to 3 times at most
+    - For any creation of robot, call create_physics_scene() first
+    - Always print the formatted code into chat to confirm before execution
+    
+    ## Physics Rules
+    - If the scene is empty, create a physics scene with create_physics_scene()
+    - For physics simulation, avoid using simulation_context to run simulations in the main thread
+    - Use the World class with async methods for initializing physics and running simulations
+    - When needed, use my_world.play() followed by multiple step_async() calls to wait for physics to stabilize
+    
+    ## Robot Creation Rules
+    - Before creating a robot, verify availability of connection with get_scene_info()
+    - Available robot types: "franka", "jetbot", "carter", "g1", "go1"
+    - Position robots using their appropriate parameters
+    - For custom robot configurations, use execute_script() only when create_robot() is insufficient
+    
+    ## Physics Scene Rules
+    - Objects should include 'type' and 'position' at minimum
+    - Object format example: {"path": "/World/Cube", "type": "Cube", "size": 20, "position": [0, 100, 0]}
+    - Default gravity is [0, 0, -981.0] (cm/s^2)
+    - Set floor=True to create a default ground plane
+    
+    ## Script Execution Rules
+    - Use World class instead of SimulationContext when possible
+    - Initialize physics before trying to control any articulations
+    - When controlling robots, make sure to step the physics at least once before interaction
+    - For robot joint control, first initialize the articulation, then get the controller 
+    ```
+    
+9. **실행 데모**
+- Demo Prompts
+    
+    ```bash
+    # Create robots and improve lighting
+    create 3x3 frankas robots in these current stage across location [3, 0, 0] and [6, 3, 0].
+    always check connection with get_scene_info before execute code.
+    add more light in the stage.
+    
+    # Add specific robots at positions
+    create a g1 robot at [3, 9, 0].
+    add Go1 robot at location [2, 1, 0].
+    move go1 robot to [1, 1, 0].
+    ```
+    
+    [Omni-MCP 실행화면](attachment:6e71ead2-df46-4a4e-afe3-cc08cb83584f:isaac_mcp_test_250605.mp4)
+    
+    Omni-MCP 실행화면
+    
 
+# 기타 명령어
 
-* 참고
-   * https://github.com/dusty-nv/jetbot_ros#jetbot-model-for-gazebo-robotics-simulator%5B/url%5D
- 
-* Nvidia Solution
-   * CUDA Toolkit : Toolkit for GPU-accelerated apps: libraries, debugging/optimization tools, a C/C++ compiler, and a runtime.
-   * NVIDIA HPC SDK : A comprehensive suite of C, C++, and Fortran compilers, libraries, and tools for GPU-accelerating HPC applications.
-   * CUDA-X Libraries : GPU-accelerated libraries delivering improved performance across a wide variety of application domains.
-   * Jetson : Embedded solutions for automomous machines and edge computing.
-   * Isaac : Robotic AI development and simulation platform.
-   * Clara : Frameworks for AI-powered imaging, genomics, and smart sensors.
-   * DRIVE : Platform for autonomous vehicles, data center-hosted simulation, and neural network training.
-   * Metropolis : Solutions for smart cities, intelligent video analytics, and more.
-   * Gameworks : Tools, samples and libraries for real-time graphics and physics.
-   * Riva : Framework for multimodal conversational AI.
-   * Developer Tools : IDE plugins, debugging, performance optimization, and other tools.
-   * Graphics Research Tools : Tools, libraries, and samples from NVIDIA Research.
-   * Omniverse : A powerful multi-GPU real-time simulation and collaboration platform for 3D production pipelines.
+<aside>
+💡
 
- ## Jetson Nano에 MobaXterm과 TigerVNC를 조합하여 리모트 접속
+**venv 관련 명령어**
 
-### 1단계: Jetson Nano 설정 (TigerVNC 서버)
-   * 먼저 Jetson Nano에 접속하여 TigerVNC를 설치하고 설정을 완료해야 합니다.
-
-   * 1. TigerVNC 및 데스크탑 환경 설치 (가벼운 XFCE 추천)
-
-```Bash
-sudo apt update
-sudo apt install tigervnc-standalone-server tigervnc-xorg-extension xfce4 xfce4-goodies -y
+```bash
+python -m venv 가상환경이름
+source 가상환경이름/bin/activate
+deactivate
+sudo rm -rf 가상환경이름
 ```
 
-   * 2. VNC 비밀번호 설정
+</aside>
 
-```Bash
-vncpasswd
+<aside>
+💡
+
+**MCP Server 실행**
+
+```bash
+# Isaac Sim should be started w/ isaac.sim.mcp_extension before run below.
+uv run ~/omni-mcp/isaac-sim-mcp/isaac_mcp/server.py
+
+# Development Mode (For Debug -- http://localhost:5173)
+uv run mcp dev ~/omni-mcp/isaac-sim-mcp/isaac_mcp/server.py
+
+# If error for Development Mode
+# Install latest LTS version using NodeSource
+curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+sudo apt-get install -y nodejs
 ```
 
-   * 3. VNC 서버 실행 (최초 실행 시 설정 파일이 생성됩니다)
-```Bash
-vncserver :1 -geometry 1920x1080 -depth 24
+</aside>
+
+<aside>
+💡
+
+**방화벽 관련 명령어**
+
+```bash
+# 방화벽
+sudo ufw enable
+sudo ufw allow 6277/tcp
+sudo ufw allow 6274/tcp
+sudo ufw allow 8766/tcp
+sudo ufw status
 ```
-   * :1은 디스플레이 번호를 뜻하며, 포트 번호 5901에 대응됩니다.
 
-### 2단계: MobaXterm에서 접속 (VNC Session)
-   * 이제 윈도우 PC에서 MobaXterm을 실행합니다.
+</aside>
 
-   * 방법 A: 일반 VNC 세션 연결
-      * 동일한 네트워크(LAN)에 있다면 바로 연결할 수 있습니다.
-      * 1. 상단의 Session 버튼 클릭 -> VNC 선택.
-      * 2. Remote hostname: Jetson Nano의 IP 주소를 입력.
-      * 3. Port: 5901 입력 (디스플레이 번호 :1 기준).
-      * 4. OK를 누르고 아까 설정한 VNC 비밀번호를 입력하면 화면이 뜹니다.
+<aside>
+💡
 
-   * 방법 B: SSH 터널링을 이용한 보안 연결 (강력 추천)
-      * 네트워크 보안이 중요하거나 외부망에서 접속할 때 유용합니다.
-      * 1. MobaXterm의 Session -> VNC 설정 창에서 Network settings 탭으로 이동합니다.
-      * 2. SSH Gateway (jump host) 설정을 활성화하여 Jetson Nano의 SSH 정보(IP, ID)를 입력합니다.
-      * 3. 이렇게 하면 VNC 데이터가 SSH 암호화 통로를 통해 전달되므로 훨씬 안전합니다.
+**Ollama 관련**
+
+```bash
+# Ollama 설치
+curl -fsSL https://ollama.com/install.sh | sh
+```
+
+```python
+# Ollama 명령어
+ollama run gemma3:4b
+
+ollama list
+
+ollama rm <model name>
+```
+
+</aside>
