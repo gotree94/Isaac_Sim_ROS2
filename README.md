@@ -31,16 +31,16 @@
       * MCP 기반 Isaac Sim Agent AI 실습
       * IsaacSim - ROS2(Isaac ROS)를 활용한 로봇 시뮬레이션 실습 - 매니퓰레이션 & 네비게이션
    * 강의  일정
-| 차시 |  내용 | 시간 |  강사 | 
-| 1 | Isaac Sim 기반 강화학습 소개 | 09:00~09:50 | 신승태 교수 (동아대학교) | 
-| 2 | MCP(Model Context Protocol)기반 Agentic AI 소개 | 10:00~10:50 | - | 
-| 3 | Isaac Sim + MCP기반 Agentic AI 튜토리얼 | 11:00~11:50 | - | 
-| 중식 |  |  12:00~13:00 | | 
-| 4 | Isaac ROS 환경 설치 및 구성 | 13:00~13:50 | - | 
-| 5 | Isaac Sim - ROS2 튜토리얼 - Moveit2: Mannipulation #1 | 14:00~14:50 | - | 
-| 6 | Isaac Sim - ROS2 튜토리얼 - Moveit2: Mannipulation #2 | 15:00~15:50 | - | 
-| 7 | Isaac Sim - ROS2 튜토리얼 - Nav2: Navigation #1 | 16:00~16:50 | - | 
-| 8 | Isaac Sim - ROS2 튜토리얼 - Nav2: Navigation #2 | 17:00~17:50 | - | 
+      | 차시 |  내용 | 시간 |  강사 | 
+      | 1 | Isaac Sim 기반 강화학습 소개 | 09:00~09:50 | 신승태 교수 (동아대학교) | 
+      | 2 | MCP(Model Context Protocol)기반 Agentic AI 소개 | 10:00~10:50 | - | 
+      | 3 | Isaac Sim + MCP기반 Agentic AI 튜토리얼 | 11:00~11:50 | - | 
+      | 중식 |  |  12:00~13:00 | | 
+      | 4 | Isaac ROS 환경 설치 및 구성 | 13:00~13:50 | - | 
+      | 5 | Isaac Sim - ROS2 튜토리얼 - Moveit2: Mannipulation #1 | 14:00~14:50 | - | 
+      | 6 | Isaac Sim - ROS2 튜토리얼 - Moveit2: Mannipulation #2 | 15:00~15:50 | - | 
+      | 7 | Isaac Sim - ROS2 튜토리얼 - Nav2: Navigation #1 | 16:00~16:50 | - | 
+      | 8 | Isaac Sim - ROS2 튜토리얼 - Nav2: Navigation #2 | 17:00~17:50 | - | 
 
    * 강의 자료
    * 사전설치 확인 요령
