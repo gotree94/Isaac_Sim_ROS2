@@ -54,8 +54,8 @@
          * Isaac Sim + ROS2 설치
          * Isaac Sim + ROS2 ㅡROS2 Moveit2 실습
          * Isaac Sim + ROS2 ㅡROS2 Moveit2 실습(1) - Single Robot
-         * Isaac Sim + ROS2 ㅡROS2 Moveit2 실습(1) - Multiple Robot
-         * Isaac Sim + ROS2 ㅡROS2 Moveit2 실습(1) - Block World Robot
+         * Isaac Sim + ROS2 ㅡROS2 Moveit2 실습(2) - Multiple Robot
+         * Isaac Sim + ROS2 ㅡROS2 Moveit2 실습(3) - Block World Robot
 
 
 
