@@ -13,6 +13,9 @@
    * 일반적으로 AI 클라이언트가 MCP 서버에 데이터/작업 요청하고, 서버가 외부 서비스와 상호 작용하는 요청-응답 패턴 따름.
    * 양방향 통신 및 상태 저장 세션 지원함.
 
+<img src= "001.png"><br>
+<img src= "002.png">
+
 ### A2A (Agent-to-Agent)
    * 제공자: Google
    * 방식: 에이전트 간 통신을 위한 구조화된 JSON-over-HTTP
@@ -29,6 +32,8 @@
       * 장기 실행 작업 비동기 푸시 알림
       * 특이사항: 양식에 구애받지 않음.
 
+<img src= "003.png"><br>
+<img src= "004.png">
 
 ### ACP (Agent Communication Protocol)
    * 설계 주체: BeeAI 및 Linux 재단
