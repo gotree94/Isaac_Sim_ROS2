@@ -44,15 +44,15 @@
       | 8 | Isaac Sim - ROS2 튜토리얼 - Nav2: Navigation #2 | 17:00~17:50 | - | 
 
    * 강의 자료
-   * 사전설치 확인 요령
-   * 📌Isaac Sim 기반 강화학습 소개 (PDF) : Isaac_Sim_기반_강화학습_소개_v2_250828.pdf
-   * A2A MCP 소개
-   * Isaac Sim + MCP(Omni-MCP) 튵토리얼
-   * Isaac Sim + ROS2 설치
-   * Isaac Sim + ROS2 ㅡROS2 Moveit2 실습
-   * Isaac Sim + ROS2 ㅡROS2 Moveit2 실습(1) - Single Robot
-   * Isaac Sim + ROS2 ㅡROS2 Moveit2 실습(1) - Multiple Robot
-   * Isaac Sim + ROS2 ㅡROS2 Moveit2 실습(1) - Block World Robot
+      * 사전설치 확인 요령
+      * 📌Isaac Sim 기반 강화학습 소개 (PDF) : Isaac_Sim_기반_강화학습_소개_v2_250828.pdf
+         * A2A MCP 소개
+         * Isaac Sim + MCP(Omni-MCP) 튵토리얼
+         * Isaac Sim + ROS2 설치
+         * Isaac Sim + ROS2 ㅡROS2 Moveit2 실습
+         * Isaac Sim + ROS2 ㅡROS2 Moveit2 실습(1) - Single Robot
+         * Isaac Sim + ROS2 ㅡROS2 Moveit2 실습(1) - Multiple Robot
+         * Isaac Sim + ROS2 ㅡROS2 Moveit2 실습(1) - Block World Robot
 
 
 
