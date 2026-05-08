@@ -12,7 +12,7 @@ source /opt/ros/humble/setup.bash
 ~/isaacsim/isaac-sim.sh --enable isaacsim.ros2.bridge
 ```
 
-![image.png](attachment:35c57adb-530e-4cae-a62d-3179995b35a0:image.png)
+![image.png](attachment:000.png)
 
 - **(필요시) ROS2 Humble 설치**
     
