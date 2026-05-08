@@ -23,6 +23,9 @@
 
 
 ## [대한기계학회—IT지능융합] (25.08.28)  2025년 하계 Isaac Sim/ROS2 강습회
+
+* https://kimelab.notion.site/IT-25-08-28-2025-Isaac-Sim-ROS2-22e875de525f809c875bdeb7b9beba60
+
    * 학회 홈페이지: 대한기계학회—IT지능융합부문 2025년 하계 Isaac Sim/ROS2 강습회 개최 안내
    * 자료 주소: kimelab.notion.site ▶️ Consulting / Short-term Course / Seminar ▶️ Short-term Course (단기교육)
    * 장소:  건국대학교
