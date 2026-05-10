@@ -120,6 +120,9 @@
     - When controlling robots, make sure to step the physics at least once before interaction
     - For robot joint control, first initialize the articulation, then get the controller 
     ```
+    .github/instructions/Isaac Sim MCP [Rules.instructions.md](http://rules.instructions.md/)
+
+
     
 9. **실행 데모**
 - Demo Prompts
