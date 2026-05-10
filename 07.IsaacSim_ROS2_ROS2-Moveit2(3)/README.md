@@ -50,7 +50,7 @@ source ~/IsaacSim-ros_workspaces/humble_ws/install/local_setup.bash
     - **Navigation2 Goal** 버튼 클릭 후 맵에서 원하는 위치 클릭 드래그.
     - Nav2가 경로 생성할 거고 로봇은 목적지로 이동 시작함.
 
-[Block World.mp4](attachment:465bbb8b-4330-455c-b8b8-7b12225c24b7:Block_World.mp4)
+https://drive.google.com/file/d/1ZzYLJg4okEbN141xTyAQUM1DZqZ-CIeD/view?usp=sharing
 
 # 참고문헌
 
