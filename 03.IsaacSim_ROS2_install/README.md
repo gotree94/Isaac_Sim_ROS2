@@ -189,7 +189,7 @@
         - ROS 브릿지 확장 기능은 **한 번에 하나만 활성화 가능.**
         - 두 브릿지(ROS 1 ↔ ROS 2) 간 전환 시, **하나를 비활성화한 다음 다른 하나를 활성화**해야 함.
         
-        ![../_images/isaac_ros_install_enable_extension.png](https://docs.isaacsim.omniverse.nvidia.com/4.5.0/_images/isaac_ros_install_enable_extension.png)
+        <img src="057.png">
         
 
 # **Choosing the ROS Bridge Version in isaac-sim.sh**
