@@ -139,7 +139,7 @@
     move go1 robot to [1, 1, 0].
     ```
     
-    [Omni-MCP 실행화면](attachment:6e71ead2-df46-4a4e-afe3-cc08cb83584f:isaac_mcp_test_250605.mp4)
+    [Omni-MCP 실행화면] https://drive.google.com/file/d/1pFh9IU4PaugdOQGxd8-KbjFUmBdtFlHI/view?usp=sharing
     
     Omni-MCP 실행화면
     
