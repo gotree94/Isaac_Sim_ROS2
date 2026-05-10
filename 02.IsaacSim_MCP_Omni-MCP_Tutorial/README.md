@@ -144,9 +144,8 @@
 # 기타 명령어
 
 <aside>
-💡
 
-**venv 관련 명령어**
+💡 **venv 관련 명령어**
 
 ```bash
 python -m venv 가상환경이름
@@ -158,9 +157,8 @@ sudo rm -rf 가상환경이름
 </aside>
 
 <aside>
-💡
 
-**MCP Server 실행**
+💡 **MCP Server 실행**
 
 ```bash
 # Isaac Sim should be started w/ isaac.sim.mcp_extension before run below.
@@ -178,9 +176,8 @@ sudo apt-get install -y nodejs
 </aside>
 
 <aside>
-💡
 
-**방화벽 관련 명령어**
+💡 **방화벽 관련 명령어**
 
 ```bash
 # 방화벽
@@ -194,9 +191,9 @@ sudo ufw status
 </aside>
 
 <aside>
-💡
 
-**Ollama 관련**
+
+💡 **Ollama 관련**
 
 ```bash
 # Ollama 설치
