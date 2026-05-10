@@ -62,7 +62,7 @@
     ```
     
 
-[Isaac Sim Menu - Moveit.mp4](attachment:7c803f76-844e-4849-883f-85a24186fb28:Isaac_Sim_Menu_-_Moveit.mp4)
+[Isaac Sim Menu - Moveit.mp4]https://drive.google.com/file/d/1Hac6VF71wQ48l54CWBu9pF2ZyYxJ2vtM/view?usp=sharing
 
 # **Isaac Sim Python을 통해 MoveIt 2 실습**
 
@@ -126,7 +126,7 @@
     ```
     
 
-[Isaac Sim Python - Moveit.mp4](attachment:74c9c274-5c48-47bb-98bf-5bb90c75150d:Isaac_Sim_Python_-_Moveit.mp4)
+[Isaac Sim Python - Moveit.mp4]https://drive.google.com/file/d/1d7YPMZYXKIw90b4nqahJUoMm0bg9CyUy/view?usp=sharing
 
 # 카메라 이미지 (RGB, Depth) 확인
 
