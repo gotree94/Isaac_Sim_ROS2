@@ -173,14 +173,10 @@
 ---
 
 # 참고문헌
-
-- [ROS2 Joint Control: Extension Python Scripting](https://docs.isaacsim.omniverse.nvidia.com/4.5.0/ros2_tutorials/tutorial_ros2_manipulation.html#isaac-sim-app-tutorial-ros2-manipulation)
-    - https://docs.isaacsim.omniverse.nvidia.com/4.5.0/ros2_tutorials/tutorial_ros2_manipulation.html#isaac-sim-app-tutorial-ros2-manipulation
-- https://docs.isaacsim.omniverse.nvidia.com/4.5.0/ros2_tutorials/tutorial_ros2_moveit.html#running-moveit-2-tutorial-in-docker
-    
-    [MoveIt 2 — Isaac Sim Documentation.pdf](attachment:b138cf74-274d-4b30-b4d0-bc663c65918a:MoveIt_2__Isaac_Sim_Documentation.pdf)
-    
-- https://moveit.picknik.ai/main/doc/how_to_guides/isaac_panda/isaac_panda_tutorial.html
-- https://github.com/moveit/moveit2_tutorials/blob/main/doc/how_to_guides/isaac_panda/isaac_panda_tutorial.rst
-    
-    [How To Command Simulated Isaac Robot — MoveIt Documentation_ Rolling documentation.pdf](attachment:a234a0fd-d133-418c-b8ca-ba5dd1c4e557:How_To_Command_Simulated_Isaac_Robot__MoveIt_Documentation__Rolling_documentation.pdf)
+   * [ROS2 Joint Control: Extension Python Scripting](https://docs.isaacsim.omniverse.nvidia.com/4.5.0/ros2_tutorials/tutorial_ros2_manipulation.html#isaac-sim-app-tutorial-ros2-manipulation)
+      *  https://docs.isaacsim.omniverse.nvidia.com/4.5.0/ros2_tutorials/tutorial_ros2_manipulation.html#isaac-sim-app-tutorial-ros2-manipulation
+   * https://docs.isaacsim.omniverse.nvidia.com/4.5.0/ros2_tutorials/tutorial_ros2_moveit.html#running-moveit-2-tutorial-in-docker
+      * [MoveIt 2 — Isaac Sim Documentation.pdf](attachment:b138cf74-274d-4b30-b4d0-bc663c65918a:MoveIt_2__Isaac_Sim_Documentation.pdf)
+   * https://moveit.picknik.ai/main/doc/how_to_guides/isaac_panda/isaac_panda_tutorial.html
+   * https://github.com/moveit/moveit2_tutorials/blob/main/doc/how_to_guides/isaac_panda/isaac_panda_tutorial.rst
+      * [How To Command Simulated Isaac Robot — MoveIt Documentation_ Rolling documentation.pdf](attachment:a234a0fd-d133-418c-b8ca-ba5dd1c4e557:How_To_Command_Simulated_Isaac_Robot__MoveIt_Documentation__Rolling_documentation.pdf)
