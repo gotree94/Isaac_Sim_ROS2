@@ -51,7 +51,7 @@ source ~/IsaacSim-ros_workspaces/humble_ws/install/local_setup.bash
     - Nav2가 경로 생성할 거고 로봇은 목적지로 이동 시작함.
 
 * Block World.mp4
-  https://drive.google.com/file/d/1ZzYLJg4okEbN141xTyAQUM1DZqZ-CIeD/view?usp=sharing
+   * https://drive.google.com/file/d/1ZzYLJg4okEbN141xTyAQUM1DZqZ-CIeD/view?usp=sharing
 
 # 참고문헌
 
