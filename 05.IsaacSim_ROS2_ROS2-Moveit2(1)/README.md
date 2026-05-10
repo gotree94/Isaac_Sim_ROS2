@@ -57,7 +57,7 @@ source ~/IsaacSim-ros_workspaces/humble_ws/install/local_setup.bash
     - 맵 파라미터가 이미지와 유사한지 확인.
     - 외곽선이 생성되고 Top View 이미지와 유사한지 확인.
         
-        <img src="isaac_sample_ros_nav_2.png">
+        <img src="058.png">
         
         ![Top View of Warehouse with Occupancy Map](https://docs.isaacsim.omniverse.nvidia.com/4.5.0/_images/isaac_sample_ros_nav_3.png)
         
