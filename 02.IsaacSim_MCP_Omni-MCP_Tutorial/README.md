@@ -76,7 +76,7 @@
     uv run --directory ~/omni-mcp ~/omni-mcp/isaac-sim-mcp/isaac_mcp/server.py
     ```
     
-    ![image.png](attachment:c20880e9-5119-4ff3-b0bc-63e54807a42a:image.png)
+    <img src="056.png">
     
 7. **VS Code + Copilot (Agent 모드 설정)**
     - Copilot 로그인 필요
